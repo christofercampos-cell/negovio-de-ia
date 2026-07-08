@@ -1,35 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
-    <style>
-        header{
-            background-color: darkorange;
-            color: black;
-            text-align: center;
-            max-width: 800px;
-            margin: auto;
-            padding: 16px;
-        }
-        main{
-            background-color: blueviolet;
-            color: black;
-            max-width: 800px;
-            margin: auto;
-        }
-    </style>
+    <title>Meu Site</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <h1>titulo principal</h1>
-        <p>explicaçao breve</p>
+        <h1>Meu Site</h1>
+        <p>Um lugar para compartilhar imagens e informações.</p>
     </header>
+
     <main>
-        <img src="Gemini_Generated_Image_xpd0xdxpd0xdxpd0.png"
-        <h2> subtitulo</h2>
-        <p>escreve de verddae</p>
+
+        <section class="banner">
+            <!-- Troque pela imagem que desejar -->
+            <img src="imagens/italia.jpg" alt="Paisagem da Itália">
+        </section>
+
+        <section class="conteudo">
+
+            <div class="card">
+                <!-- Troque pela imagem que desejar -->
+                <img src="imagens/foto1.jpg" alt="Imagem 1">
+
+                <h2>Título</h2>
+                <p>
+                    Escreva aqui o texto que desejar.
+                </p>
+
+                <button id="likeBtn">❤️ Curtir</button>
+                <p>Curtidas: <span id="likes">0</span></p>
+            </div>
+
+            <div class="card">
+                <!-- Troque pela imagem que desejar -->
+                <img src="imagens/foto2.jpg" alt="Imagem 2">
+
+                <h2>Outro título</h2>
+                <p>
+                    Você pode adicionar quantos cartões quiser.
+                </p>
+            </div>
+
+        </section>
+
     </main>
+
+    <footer>
+        <p>© 2026 - Meu Site</p>
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
