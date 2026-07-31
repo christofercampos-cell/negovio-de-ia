@@ -1,21 +1,35 @@
-const likeBtn = document.getElementById("likeBtn");
-const likes = document.getElementById("likes");
+const botoes = document.querySelectorAll(".likeBtn");
+const contadores = document.querySelectorAll(".likes");
 
-let curtido = false;
-let total = 0;
 
-likeBtn.addEventListener("click", function () {
+botoes.forEach((botao, index) => {
 
-    if (curtido) {
-        curtido = false;
-        total--;
-        likeBtn.textContent = "🤍";
-    } else {
-        curtido = true;
-        total++;
-        likeBtn.textContent = "❤️";
-    }
+    let curtido = false;
+    let numeroCurtidas = 0;
 
-    likes.textContent = total;
+
+    botao.addEventListener("click", () => {
+
+
+        if(curtido){
+
+            curtido = false;
+            numeroCurtidas--;
+            botao.innerHTML = "❤️ Curtir";
+
+        }else{
+
+            curtido = true;
+            numeroCurtidas++;
+            botao.innerHTML = "❤️ Curtido";
+
+        }
+
+
+        contadores[index].textContent = numeroCurtidas;
+
+
+    });
+
 
 });
