@@ -32,4 +32,4 @@ botoes.forEach((botao, index) => {
     });
 
 
-});
+});v
