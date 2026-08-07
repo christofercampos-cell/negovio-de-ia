@@ -2,132 +2,357 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:linear-gradient(135deg,#ececec,#fafafa);
+
+    background:
+    linear-gradient(
+        rgba(255,255,255,0.90),
+        rgba(255,255,255,0.90)
+    ),
+    url("https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
     color:#333;
+
 }
+
+
+/* ================= HEADER ================= */
 
 header{
-    background:linear-gradient(90deg,#009246,#fff,#ce2b37);
-    padding:40px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #008C45,
+        #ffffff,
+        #CD212A
+    );
+
+    padding:50px 20px;
+
     text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.25);
+
 }
+
 
 header h1{
+
     font-size:3rem;
+
+    font-weight:700;
+
+    color:#222;
+
+    text-shadow:
+    2px 2px 5px rgba(0,0,0,.15);
+
 }
+
 
 header p{
-    margin-top:10px;
+
+    margin-top:15px;
+
+    font-size:1.1rem;
+
+    color:#333;
+
 }
 
-.banner img{
+
+/* ================= BANNER ================= */
+
+.banner{
+
     width:100%;
-    height:420px;
-    object-fit:cover;
-}
 
-.conteudo{
-
-    width:90%;
-    max-width:1200px;
-    margin:50px auto;
-
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-    gap:40px;
-
-}
-
-.card{
-
-    background:white;
-    border-radius:20px;
     overflow:hidden;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-
-    transition:.4s;
-
 }
 
-.card:hover{
 
-    transform:translateY(-10px);
-
-    box-shadow:0 20px 40px rgba(0,0,0,.25);
-
-}
-
-.card img{
+.banner img{
 
     width:100%;
-    height:250px;
+
+    height:450px;
+
     object-fit:cover;
+
+    display:block;
+
+    filter:
+    brightness(.9);
 
     transition:.5s;
 
 }
 
-.card:hover img{
 
-    transform:scale(1.08);
+.banner img:hover{
+
+    transform:scale(1.05);
 
 }
+
+
+
+/* ================= CONTEÚDO ================= */
+
+
+.conteudo{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:60px auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(330px,1fr)
+    );
+
+    gap:35px;
+
+}
+
+
+
+/* ================= CARD ================= */
+
+
+.card{
+
+    background:white;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+    position:relative;
+
+}
+
+
+.card:hover{
+
+    transform:
+    translateY(-12px);
+
+    box-shadow:
+
+    0 20px 45px rgba(0,0,0,.25);
+
+}
+
+
+
+/* ================= IMAGEM CARD ================= */
+
+
+.imagem{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.imagem img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
+
+}
+
+
+
+.card:hover .imagem img{
+
+    transform:
+    scale(1.12);
+
+}
+
+
+
+/* ================= CORAÇÃO NA FOTO ================= */
+
+
+.coracao{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:
+    translate(-50%,-50%)
+    scale(0);
+
+    font-size:90px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+
+.coracao.ativo{
+
+    animation:
+    coracaoAnim .8s ease;
+
+}
+
+
+
+@keyframes coracaoAnim{
+
+
+0%{
+
+transform:
+translate(-50%,-50%)
+scale(0);
+
+opacity:0;
+
+}
+
+
+40%{
+
+transform:
+translate(-50%,-50%)
+scale(1.4);
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:
+translate(-50%,-50%)
+scale(1);
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+/* ================= TEXTO CARD ================= */
+
 
 .info{
 
-    padding:20px;
+    padding:25px;
 
 }
+
 
 .info h2{
 
+    font-size:1.8rem;
+
     margin-bottom:15px;
 
+    color:#222;
+
 }
+
+
 
 .info p{
 
     line-height:1.7;
 
+    color:#555;
+
 }
+/* ================= BOTÃO DE CURTIDA ================= */
+
 
 .likeBtn{
 
     margin-top:20px;
 
-    border:none;
-
-    padding:12px 25px;
+    padding:12px 28px;
 
     border-radius:50px;
 
-    cursor:pointer;
+    border:2px solid #ddd;
 
     background:white;
 
-    border:2px solid #ddd;
+    color:#333;
 
-    font-size:18px;
+    font-size:17px;
 
-    font-weight:bold;
+    font-weight:600;
+
+    cursor:pointer;
 
     transition:.3s;
 
-    box-shadow:0 5px 12px rgba(0,0,0,.12);
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.12);
 
 }
+
 
 .likeBtn:hover{
 
-    transform:scale(1.08);
+    transform:
+    scale(1.08);
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.18);
 
 }
+
+
+/* BOTÃO QUANDO CURTIDO */
 
 .likeBtn.liked{
 
@@ -137,23 +362,63 @@ header p{
 
     border-color:#ff3040;
 
-    animation:like .35s;
+    animation:
+    pulse .4s;
 
 }
+
+
+
+@keyframes pulse{
+
+
+0%{
+
+transform:
+scale(1);
+
+}
+
+
+50%{
+
+transform:
+scale(1.25);
+
+}
+
+
+100%{
+
+transform:
+scale(1);
+
+}
+
+
+}
+
+
+
+/* ================= CONTADOR ================= */
+
 
 .contador{
 
-    margin-top:15px;
+    margin-top:18px;
 
-    font-weight:bold;
+    font-weight:600;
 
-    color:#ff3040;
+    color:#ff3040 !important;
 
 }
 
-footer{
 
-    margin-top:40px;
+
+/* ================= FOOTER ================= */
+
+
+footer{
 
     background:#222;
 
@@ -161,44 +426,176 @@ footer{
 
     text-align:center;
 
-    padding:25px;
+    padding:30px 20px;
+
+    margin-top:50px;
+
+    font-size:15px;
 
 }
 
-@keyframes like{
 
-0%{
+/* ================= ANIMAÇÕES GERAIS ================= */
 
-transform:scale(.8);
 
-}
+.card{
 
-50%{
+    animation:
 
-transform:scale(1.25);
+    aparecer .8s ease;
 
 }
 
-100%{
 
-transform:scale(1);
+
+@keyframes aparecer{
+
+
+from{
+
+opacity:0;
+
+transform:
+translateY(40px);
 
 }
 
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0);
+
 }
 
-@media(max-width:700px){
+
+}
+
+
+
+/* ================= RESPONSIVIDADE ================= */
+
+
+@media(max-width:900px){
+
 
 header h1{
 
-font-size:2.2rem;
+    font-size:2.4rem;
 
 }
+
 
 .banner img{
 
-height:250px;
+    height:350px;
 
 }
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+header{
+
+    padding:35px 15px;
+
+}
+
+
+header h1{
+
+    font-size:2rem;
+
+}
+
+
+header p{
+
+    font-size:.95rem;
+
+}
+
+
+.banner img{
+
+    height:250px;
+
+}
+
+
+.conteudo{
+
+    width:95%;
+
+    margin:35px auto;
+
+}
+
+
+.card{
+
+    border-radius:18px;
+
+}
+
+
+.imagem img{
+
+    height:220px;
+
+}
+
+
+.info{
+
+    padding:20px;
+
+}
+
+
+.info h2{
+
+    font-size:1.5rem;
+
+}
+
+
+.likeBtn{
+
+    width:100%;
+
+}
+
+
+}
+
+
+
+/* ================= EFEITO DE VIDRO NO HEADER ================= */
+
+
+header{
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+
+/* ================= SELEÇÃO DE TEXTO ================= */
+
+
+::selection{
+
+    background:#CD212A;
+
+    color:white;
 
 }
