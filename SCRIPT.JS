@@ -1,24 +1,34 @@
 const botoes = document.querySelectorAll(".likeBtn");
-const contadores = document.querySelectorAll(".likes");
 
-botoes.forEach((botao, index) => {
+botoes.forEach((botao)=>{
 
-    let curtido = false;
-    let numeroCurtidas = 0;
+    let curtido=false;
+    let curtidas=0;
 
-    botao.addEventListener("click", () => {
+    const contador=botao.parentElement.querySelector(".likes");
 
-        if (curtido) {
-            curtido = false;
-            numeroCurtidas--;
-            botao.textContent = "❤️ Curtir";
-        } else {
-            curtido = true;
-            numeroCurtidas++;
-            botao.textContent = "❤️ Curtido";
+    botao.addEventListener("click",()=>{
+
+        if(curtido){
+
+            curtido=false;
+            curtidas--;
+
+            botao.classList.remove("liked");
+            botao.innerHTML="🤍 Curtir";
+
+        }else{
+
+            curtido=true;
+            curtidas++;
+
+            botao.classList.add("liked");
+            botao.innerHTML="❤️ Curtido";
+
         }
 
-        contadores[index].textContent = numeroCurtidas;
+        contador.textContent=curtidas;
+
     });
 
 });

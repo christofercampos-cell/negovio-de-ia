@@ -6,64 +6,77 @@
     <title>A Itália</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header>
     <h1>🇮🇹 A Itália</h1>
-    <p>Informações sobre a história, cultura e lugares da Itália.</p>
+    <p>História, cultura, gastronomia e os lugares mais incríveis.</p>
 </header>
 
-<main>
+<section class="banner">
+    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=80" alt="">
+</section>
 
-    <section class="banner">
-        <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80" alt="Paisagem da Itália">
-    </section>
+<main class="conteudo">
 
-    <section class="conteudo">
+    <article class="card">
 
-        <article class="card">
+        <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=700&q=80">
 
-            <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=600&q=80" alt="Itália">
+        <div class="info">
 
-            <h2>Itália</h2>
+            <h2>Roma</h2>
 
             <p>
-                A Itália é um país localizado no sul da Europa, conhecido por sua história,
-                cultura, gastronomia e monumentos famosos como o Coliseu, a Torre de Pisa e Veneza.
-                Sua capital é Roma, uma das cidades mais importantes do mundo.
+                Roma é a capital da Itália e uma das cidades mais antigas do mundo.
+                Abriga monumentos históricos como o Coliseu, o Fórum Romano e a Fontana di Trevi.
             </p>
 
-            <button class="likeBtn">❤️ Curtir</button>
+            <button class="likeBtn">
+                🤍 Curtir
+            </button>
 
-            <p>Curtidas: <span class="likes">0</span></p>
+            <p class="contador">
+                ❤️ Curtidas: <span class="likes">0</span>
+            </p>
 
-        </article>
+        </div>
 
-        <article class="card">
+    </article>
 
-            <img src="https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=600&q=80" alt="Veneza">
+    <article class="card">
+
+        <img src="https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=700&q=80">
+
+        <div class="info">
 
             <h2>Veneza</h2>
 
             <p>
-                Veneza é uma cidade italiana famosa por seus canais, gôndolas,
-                pontes históricas e pela Praça de São Marcos.
-                É um dos destinos turísticos mais visitados do mundo.
+                Veneza encanta turistas do mundo inteiro pelos seus canais,
+                gôndolas e construções históricas.
             </p>
 
-            <button class="likeBtn">❤️ Curtir</button>
+            <button class="likeBtn">
+                🤍 Curtir
+            </button>
 
-            <p>Curtidas: <span class="likes">0</span></p>
+            <p class="contador">
+                ❤️ Curtidas: <span class="likes">0</span>
+            </p>
 
-        </article>
+        </div>
 
-    </section>
+    </article>
 
 </main>
 
 <footer>
-    <p>&copy; 2026 - Meu Site | Desenvolvido com HTML, CSS e JavaScript</p>
+    © 2026 | Desenvolvido com HTML, CSS e JavaScript
 </footer>
 
 <script src="script.js"></script>
