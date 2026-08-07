@@ -1,34 +1,84 @@
 const botoes = document.querySelectorAll(".likeBtn");
 
-botoes.forEach((botao)=>{
 
-    let curtido=false;
-    let curtidas=0;
+// ================= CURTIDAS =================
 
-    const contador=botao.parentElement.querySelector(".likes");
+botoes.forEach((botao) => {
 
-    botao.addEventListener("click",()=>{
+    let curtido = false;
+    let quantidade = 0;
+
+    const contador = botao
+        .parentElement
+        .querySelector(".likes");
+
+
+    botao.addEventListener("click", () => {
+
 
         if(curtido){
 
-            curtido=false;
-            curtidas--;
+            curtido = false;
+
+            quantidade--;
 
             botao.classList.remove("liked");
-            botao.innerHTML="🤍 Curtir";
+
+            botao.innerHTML = "🤍 Curtir";
+
 
         }else{
 
-            curtido=true;
-            curtidas++;
+
+            curtido = true;
+
+            quantidade++;
 
             botao.classList.add("liked");
-            botao.innerHTML="❤️ Curtido";
+
+            botao.innerHTML = "❤️ Curtido";
+
 
         }
 
-        contador.textContent=curtidas;
+
+        contador.textContent = quantidade;
+
 
     });
+
+
+});
+
+
+
+// ================= CORAÇÃO NA FOTO =================
+
+
+const imagens = document.querySelectorAll(".imagem");
+
+
+imagens.forEach((imagem)=>{
+
+
+    const coracao = imagem.querySelector(".coracao");
+
+
+    imagem.addEventListener("dblclick",()=>{
+
+
+        coracao.classList.remove("ativo");
+
+
+        // força reiniciar animação
+        void coracao.offsetWidth;
+
+
+        coracao.classList.add("ativo");
+
+
+    });
+
+
 
 });
